@@ -118,7 +118,33 @@ const isFullAge = ageSarah >= 18;
 console.log(isFullAge);
 */
 
+/*
+//Strings and Template Literals
 
+const firstName = "Cardy";
+const job = "Soldier";
+const birthYear = 1974;
+const year = 2021;
+
+const cardy = "I'm " + firstName + ', a ' + (year - birthYear) + ' year old ' + job + '!';
+console.log(cardy);
+
+//Template literal
+const cardyNew = `I'm ${firstName}, a ${year - birthYear} year old ${job}!`;
+console.log(cardyNew);
+console.log(`Just a regular string...`);
+
+//Multi-line string
+//Old method
+console.log('String with \n\ multiple \n\ lines.');
+
+//Better method
+console.log(`Another string
+with multiple
+lines`);
+*/
+
+//If/Else Statements
 
 
 
@@ -196,6 +222,7 @@ console.log(description);
 ///// End Assignment 4 /////
 */
 
+/*
 ///// Start Coding Challene 1 /////
 //Mark and John are trying to compare their BMI (Body Mass Index), which is calculated using the formula: BMI = mass / height ** 2 = mass / (height * height) (mass in kg and height in meter).
 
@@ -227,5 +254,5 @@ console.log(bmiMark, bmiJohn, markHigherBMI);
 
 
 ///// End Coding Challene 1 /////
-
+*/
 
