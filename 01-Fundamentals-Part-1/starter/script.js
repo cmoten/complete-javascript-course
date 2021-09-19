@@ -144,8 +144,28 @@ with multiple
 lines`);
 */
 
+/*
 //If/Else Statements
+const age = 15;
 
+if (age >= 18) {
+    console.log(`Sarah can start her driving license 🚗`);
+} else {
+    const yearsLeft = 18 - age;
+    console.log(`Sarah is too young. Wait another ${yearsLeft} years.`);
+}
+
+const birthYear = 2012;
+
+let century;
+if (birthYear <= 2000) {
+    century = 20;
+} else {
+    century = 21;
+}
+
+console.log(century);
+*/
 
 
 /*
@@ -220,6 +240,47 @@ let description = 'Portugal is in Europe, and its 11 million people speak portug
 console.log(description);
 
 ///// End Assignment 4 /////
+
+///// Start Assignment 5 /////
+
+//1. Recreate the 'description' variable from the last assignment, this time using the template literal syntax
+
+description = `${country} is in ${continent}, and its ${population} million people speak ${language}`
+console.log(description);
+
+///// End Assignment 5 /////
+
+///// Start Assignment 6 /////
+
+//1. If your country's population is greater that 33 million, log a string like this to the console: 'Portugal's population is above average'. Otherwise, log a string like 'Portugal's population is 22 million below average' (the 22 is the average of 33 minus the country's population)
+if (population > avgPopulation) {
+    console.log(`${country}'s population is above average.`)
+} else {
+    console.log(`${country}'s population is ${avgPopulation - population} million below average.`)
+}
+
+
+//2. After checking the result, change the population temporarily to 13 and then to 130. See the different results, and set the population back to original
+
+population = 13;
+
+if (population > avgPopulation) {
+    console.log(`${country}'s population is above average.`)
+} else {
+    console.log(`${country}'s population is ${avgPopulation - population} million below average.`)
+}
+
+population = 130;
+
+if (population > avgPopulation) {
+    console.log(`${country}'s population is above average.`)
+} else {
+    console.log(`${country}'s population is ${avgPopulation - population} million below average.`)
+}
+
+population = 333;
+
+///// End Assignment 6 /////
 */
 
 /*
