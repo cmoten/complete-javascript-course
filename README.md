@@ -1,1 +1,1 @@
-This repository are my course materials for the [Complete Javascript Course](https://www.udemy.com/course/the-complete-javascript-course/) on Udemy.
+This repository are my course materials for [Jonas Schmedtmann's](https://github.com/jonasschmedtmann) [Complete Javascript Course](https://www.udemy.com/course/the-complete-javascript-course/) on Udemy.
