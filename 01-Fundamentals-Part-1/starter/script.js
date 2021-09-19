@@ -312,8 +312,23 @@ console.log(bmiMark, bmiJohn, markHigherBMI);
 //Test data:
 //Data 1: Marks weights 78 kg and is 1.69 m tall. John weights 92 kg and is 1.95 m tall.
 //Data 2: Marks weights 95 kg and is 1.88 m tall. John weights 85 kg and is 1.76 m tall.
-
-
 ///// End Coding Challene 1 /////
+
+
+///// Start Coding Challene 2 /////
+//Use the BMI example from Challenge #1, and the code you already wrote, and improve it.
+
+//Your tasks:
+if (bmiMark > bmiJohn) {
+    //1. Print a nice output to the console, saying who has the higher BMI. The message is either "Mark's BMI is higher than John's!" or "John's BMI is higher than Mark's!"
+    console.log(`Mark's BMI is higher than John's`);
+
+    //2. Use a template literal to include the BMI values in the outputs. Example: "Mark's BMI (28.3) is higher than John's (23.9)!"
+    console.log(`Mark's BMI (${bmiMark.toFixed(2)}) is higher than John's (${bmiJohn.toFixed(2)})`);
+} else {
+    console.log(`Johns's BMI is higher than Mark's`);
+    console.log(`John's BMI (${bmiJohn.toFixed(2)}) is higher than Mark's (${bmiMark.toFixed(2)})`);
+}
+///// End Coding Challene 2 /////
 */
 
