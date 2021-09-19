@@ -167,6 +167,28 @@ if (birthYear <= 2000) {
 console.log(century);
 */
 
+//Type Conversion and Coercion
+
+/*
+//Type conversion
+const inputYear = '1991';
+console.log(Number(inputYear) + 18);
+
+console.log(Number('Jonas')); //NaN
+console.log(typeof NaN); //number
+
+console.log(String(23), 23);
+
+//Type coercion
+console.log('I am ' + 23 + ' years old.')
+console.log('23' - '10' - 3);
+console.log('23' / '2');
+console.log('23' > '18');
+
+let n = '1' + 1//11
+n = n - 1//10
+console.log(n);
+*/
 
 /*
 //Assignments
@@ -281,6 +303,23 @@ if (population > avgPopulation) {
 population = 333;
 
 ///// End Assignment 6 /////
+
+
+///// Start Assignment 7 /////
+//1. Predict the result of these 5 operations without executing them:
+//'9' - '5';
+//'19' - '13' + '17';
+// '19' - '13' + 17;
+// '123' < 57;
+// 5 + 6 + '4' + 9 - 4 - 2;
+// 2. Execute the operations to check if you were right
+console.log('9' - '5');//4
+console.log('19' - '13' + '17'); //617
+console.log('19' - '13' + 17);//23
+console.log('123' < 57);//false
+console.log(5 + 6 + '4' + 9 - 4 - 2);//1143
+
+///// End Assignment 7 /////
 */
 
 /*
