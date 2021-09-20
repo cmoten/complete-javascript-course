@@ -1,20 +1,5 @@
 'use strict';
-/*
-//Get text in an element
-console.log(document.querySelector('.message').textContent);
-
-//Set a new text value in the message class
-document.querySelector('.message').textContent = '🎉 Correct Number!';
-
-console.log(document.querySelector('.message').textContent);
-
-document.querySelector('.number').textContent = 13; //number to guess
-document.querySelector('.score').textContent = 10; //current score
-
-document.querySelector('.guess').value = 23;
-console.log(document.querySelector('.guess').value);
-*/
-
+//Initial loading of page
 let secretNumber = Math.trunc(Math.random() * 20) + 1; //number to guess
 
 let score = 20;
@@ -43,21 +28,11 @@ document.querySelector('.check').addEventListener('click', function () {
       document.querySelector('.highscore').textContent = highScore;
     }
 
-    //Guess is too high
-  } else if (guess > secretNumber) {
+    //Guess is wrong
+  } else if (guess !== secretNumber) {
     if (score > 1) {
-      document.querySelector('.message').textContent = '📈 Too high!';
-      score--;
-      document.querySelector('.score').textContent = score;
-    } else {
-      document.querySelector('.message').textContent = '💥 You lost the game!';
-      document.querySelector('.score').textContent = 0;
-    }
-
-    //Guess is too low
-  } else if (guess < secretNumber) {
-    if (score > 1) {
-      document.querySelector('.message').textContent = '📉 Too low!';
+      document.querySelector('.message').textContent =
+        guess > secretNumber ? '📈 Too high!' : '📉 Too low!';
       score--;
       document.querySelector('.score').textContent = score;
     } else {
