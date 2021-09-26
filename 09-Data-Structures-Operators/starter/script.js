@@ -47,10 +47,122 @@ const restaurant = {
       `Here is your delicious pasta with ${ing1}, ${ing2}, and ${ing3}`
     );
   },
+
+  orderPizza: function (mainIngredient, ...otherIngredients) {
+    console.log(mainIngredient);
+    console.log(otherIngredients);
+  },
 };
 
 //////////////////////////////
-//Spread operator
+//For-of loop
+
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+for (const item of menu) console.log(item);
+
+for (const [i, el] of menu.entries()) {
+  console.log(`${i + 1}: ${el}`);
+}
+
+// console.log([...menu.entries()]);
+
+//////////////////////////////
+
+/*
+//////////////////////////////
+//Nullish coalescing operator
+restaurant.numGuests = 0;
+const guests = restaurant.numGuests || 10;
+console.log(guests); //method doesn't work with 0
+
+//Nullish: null and undefined (NOT 0 or '')
+const guestsCorrect = restaurant.numGuests ?? 10;
+console.log(guestsCorrect); //returns 0 as expected
+
+//////////////////////////////
+
+
+
+console.log('-----OR-----');
+//////////////////////////////
+//Logical operators (&&, ||)
+//short-circuting: if the first value is a "truthy" value, then the first value is returned
+console.log(3 || 'Cardy');
+console.log('' || 'Cardy');
+console.log(true || 0);
+console.log(undefined || null);
+console.log(undefined || 0 || '' || 'Hello' || 23 || null);
+
+restaurant.numGuests = 0;
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests1);
+
+const guests2 = restaurant.numGuests || 10;
+console.log(guests2); //method doesn't work with 0
+
+console.log('-----AND-----');
+//Shorts circuit with "falsey" values
+console.log(0 && 'Cardy');
+console.log(7 && 'Cardy');
+
+console.log('Hello' && 23 && null && 'Cardy');
+
+//Practical example
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushrooms', 'spinach');
+}
+
+restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach', 'feta');
+
+//////////////////////////////
+
+
+
+//////////////////////////////
+//Rest operator (left-hand side of assignment operator)
+//Rest element must be the last element
+
+//1) Destructuring
+
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(a, b, others);
+
+const [pizza, , risotto, ...otherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+console.log(pizza, risotto, otherFood);
+
+//Objects
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(sat);
+console.log(weekdays);
+
+//2) Functions
+const add = function (...numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+  console.log(sum);
+}; //function with rest parameters
+
+add(2, 3);
+add(5, 3, 7, 2);
+add(8, 2, 5, 3, 2, 1, 4);
+
+const x = [25, 5, 7];
+add(...x);
+
+restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach');
+restaurant.orderPizza('mushrooms');
+
+//////////////////////////////
+
+
+//////////////////////////////
+//Spread operator (right-hand side of assignment operator)
 const arr = [7, 8, 9];
 const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
 
@@ -98,7 +210,7 @@ console.log(restaurantCopy.name, restaurant.name);
 
 //////////////////////////////
 
-/*
+
 
 //////////////////////////////
 //Destructuring Objects
@@ -187,4 +299,103 @@ console.log(i, j, k);
 const [p = 1, q = 1, r = 1] = [8];
 console.log(p, q, r);
 //////////////////////////////
+*/
+
+/*
+We're building a football betting app (soccer for my American friends 😅)!
+Suppose we get data from a web service about a certain game ('game' variable on
+next page). In this challenge we're gonna work with that data.
+Your tasks:
+1. Create one player array for each team (variables 'players1' and
+'players2')
+2. The first player in any player array is the goalkeeper and the others are field
+players. For Bayern Munich (team 1) create one variable ('gk') with the
+goalkeeper's name, and one array ('fieldPlayers') with all the remaining 10
+field players
+3. Create an array 'allPlayers' containing all players of both teams (22
+players)
+4. During the game, Bayern Munich (team 1) used 3 substitute players. So create a
+new array ('players1Final') containing all the original team1 players plus
+'Thiago', 'Coutinho' and 'Perisic'
+5. Based on the game.odds object, create one variable for each odd (called
+'team1', 'draw' and 'team2')
+6. Write a function ('printGoals') that receives an arbitrary number of player
+names (not an array) and prints each of them to the console, along with the
+number of goals that were scored in total (number of player names passed in)
+7. The team with the lower odd is more likely to win. Print to the console which
+team is more likely to win, without using an if/else statement or the ternary
+operator.
+Test data for 6.: First, use players 'Davies', 'Muller', 'Lewandowski' and 'Kimmich'.
+Then, call the function again with players from game.scored
+ 
+const game = {
+  team1: 'Bayern Munich',
+  team2: 'Borrussia Dortmund',
+  players: [
+    [
+      'Neuer',
+      'Pavard',
+      'Martinez',
+      'Alaba',
+      'Davies',
+      'Kimmich',
+      'Goretzka',
+      'Coman',
+      'Muller',
+      'Gnarby',
+      'Lewandowski',
+    ],
+    [
+      'Burki',
+      'Schulz',
+      'Hummels',
+      'Akanji',
+      'Hakimi',
+      'Weigl',
+      'Witsel',
+      'Hazard',
+      'Brandt',
+      'Sancho',
+      'Gotze',
+    ],
+  ],
+  score: '4:0',
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+  date: 'Nov 9th, 2037',
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+};
+//1.
+const [players1, players2] = game.players;
+
+//2.
+const [gk, ...fieldPlayers] = players1;
+
+//3.
+const allPlayers = [...players1, ...players2];
+
+//4.
+const players1Final = [...players1, 'Thiago', 'Coutinho', 'Perisic'];
+
+//5.
+const {
+  odds: { team1, x: draw, team2 },
+} = game;
+
+//6.
+const printGoals = function (...players) {
+  console.log(`${players.length} goals were scored.`);
+};
+
+printGoals('Davies', 'Muller', 'Lewandowski', 'Kimmich');
+printGoals(...game.scored);
+
+//7.
+team1 < team2 && console.log('Team 1 is more likely to win!');
+
+team2 < team1 && console.log('Team 2 is more likely to win!');
+
 */
