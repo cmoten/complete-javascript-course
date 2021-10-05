@@ -1,8 +1,41 @@
 'use strict';
+
+//////////////////////////////
+//Functions-Closures
+const secureBooking = function () {
+  let passengerCount = 0;
+
+  return function () {
+    passengerCount++;
+    console.log(`${passengerCount} passengers`);
+  };
+};
+
+const booker = secureBooking();
+booker();
+booker();
+booker();
+//////////////////////////////
+
+/*
 //////////////////////////////
 //Functions-IIFE
+//Immediately Invoked Function Expressions
+
+//Not IIFE
+const runOnce = function () {
+  console.log('This will never run again');
+};
+runOnce();
+
+//IIFE
+(function () {
+  console.log('This will truly never run again');
+})();
+
+(() => console.log('IIFE works for arrow functions as well'))();
 //////////////////////////////
-/*
+
 //////////////////////////////
 //Functions-Call, Apply, and Bind
 const lufthansa = {
