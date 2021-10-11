@@ -712,7 +712,7 @@ const dogs = [
 
 //1.
 
-dogs.forEach(dog => (dog.recFood = dog.weight ** 0.75 * 28));
+dogs.forEach(dog => (dog.recFood = Math.trunc(dog.weight ** 0.75 * 28)));
 
 //2.
 const dogSarah = dogs.find(dog => dog.owners.includes('Sarah'));
@@ -757,5 +757,6 @@ console.log(okayDogs);
 const sortedDogs = dogs.slice().sort((a, b) => a.recFood - b.recFood);
 
 console.log(sortedDogs);
-*/
+
 ///////////////////////////////////////
+*/
